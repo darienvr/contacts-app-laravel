@@ -17,8 +17,10 @@
                         <label class="form-label">Contraseña</label>
                         <input type="password" name="password" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-success">Iniciar Sesion</button>
-                    <a href="{{route('register')}}" class="btn btn-secondary">Registrarse</a>
+                    <button type="submit" class="btn btn-success mb-2">Iniciar Sesion</button>
+                    <div>
+                        <p>¿No tienes una cuenta? <a href="{{route('register')}}" class="text-primary">Registrarse</a></p>
+                    </div>
                 </form>
             </div>
         </div>

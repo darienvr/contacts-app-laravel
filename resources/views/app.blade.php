@@ -8,19 +8,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
       body {
-        --s: 50px;
-        --c: #191b22;
-        --_s: calc(2*var(--s)) calc(2*var(--s));
-        --_g: 35.36% 35.36% at;
-        --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
-        background: 
-          radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
-          radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
-          radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
-          radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
-          repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
-          radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
-        background-attachment: fixed;
+        --s: 200px; /* control the size */
+        --c1: #1d1d1d;
+        --c2: #4e4f51;
+        --c3: #3c3c3c;
+        
+        background:
+          repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 180deg) 
+          calc(.5*var(--s)) calc(.5*var(--s)*0.577),
+          repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 180deg);
+        background-size: var(--s) calc(var(--s)*0.577);
+        /* 0.577 = tan(30deg)*/
       }
     </style>
   </head>
@@ -36,7 +34,7 @@
               @auth   
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                   @csrf
-                  <button type="submit" class="btn btn-link">Cerrar sesión</button>
+                  <button type="submit" class="btn text-light">Cerrar sesión</button>
                 </form>
               @endauth
             </div>

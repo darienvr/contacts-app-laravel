@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="d-flex justify-content-center mt-5">
-        <div class="card" style="width: 400px;">
+        <div class="card border-dark" style="min-width: 400px;">
             <div class="card-body text-center">
-                <h1>Bienvenido {{ $user->name }}</h1>
+                <h1>¡ Bienvenido {{ $user->name }} !</h1>
                 <a href="{{route('contacts-create')}}">
                     <button class="btn btn-primary">Agregar Contacto</button>
                 </a>
@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <h3 class="text-center mt-3">{{ count($contacts)}} contactos agregados</h3>
+    <h3 class="text-center text-light mt-3">{{ count($contacts)}} contactos agregados</h3>
     <div class="d-flex justify-content-center mt-1">
         <div class="row d-flex justify-content-center">
         @foreach ($contacts as $counter => $contact)
@@ -21,7 +21,7 @@
                 </div>  
             @endif
             <div class="col mt-3 d-flex justify-content-center">
-                <div class="card text-center" style="width: 300px;">
+                <div class="card bg-dark text-light text-center border-light" style="width: 300px;">
                     <div class="card-body align-items-center">
                         <h3 class="card-title">{{$contact->nombre}}</h3>
                         <h5 class="card-text">{{$contact->numero}}</h5>
