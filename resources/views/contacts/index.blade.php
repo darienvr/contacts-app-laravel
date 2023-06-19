@@ -4,26 +4,27 @@
     <div class="d-flex justify-content-center mt-5">
         <div class="card" style="width: 400px;">
             <div class="card-body text-center">
-                <h1>Bienvenido User</h1>
+                <h1>Bienvenido {{ $user->name }}</h1>
                 <a href="{{route('contacts-create')}}">
-                    <button class="btn btn-success">Agregar Contacto</button>
+                    <button class="btn btn-primary">Agregar Contacto</button>
                 </a>
             </div>
         </div>
     </div>
 
+    <h3 class="text-center mt-3">{{ count($contacts)}} contactos agregados</h3>
     <div class="d-flex justify-content-center mt-1">
-        <div class="row">
+        <div class="row d-flex justify-content-center">
         @foreach ($contacts as $counter => $contact)
             @if ($counter % 3 == 0)
                 <div class="row">
                 </div>  
             @endif
-            <div class="col-md-4 mt-3 d-flex justify-content-center" >
-                <div class="card text-center" style="width: 250px;">
+            <div class="col mt-3 d-flex justify-content-center">
+                <div class="card text-center" style="width: 300px;">
                     <div class="card-body align-items-center">
-                        <h3>{{$contact->nombre}}</h3>
-                        <h5>{{$contact->numero}}</h5>
+                        <h3 class="card-title">{{$contact->nombre}}</h3>
+                        <h5 class="card-text">{{$contact->numero}}</h5>
                         <a href="{{route('contacts-edit', ['id'=>$contact->id])}}">
                             <button class="btn btn-warning mb-2" style="width: 80px;">Edit</button>
                         </a>

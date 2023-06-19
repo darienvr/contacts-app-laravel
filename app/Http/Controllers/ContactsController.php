@@ -4,17 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class ContactsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $contacts = Contact::all();
-        return view('contacts.index', ['contacts'=>$contacts]);
+        $user = Auth::user();
+        $contacts = Contact::where('id_usuario', $user->id)->get();
+        return view('contacts.index', ['contacts'=>$contacts, 'user' => $user]);
     }
 
     /**
@@ -35,10 +38,12 @@ class ContactsController extends Controller
         $contact = new Contact;
         $contact->nombre = $request->nombre;
         $contact->numero = $request->numero;
+        $contact->id_usuario = Auth::id(); 
         $contact->save();
 
         return redirect()->route('contacts');
     }
+    
 
     /**
      * Display the specified resource.

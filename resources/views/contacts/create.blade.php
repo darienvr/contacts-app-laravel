@@ -16,7 +16,7 @@
                         <input type="text" name="numero" class="form-control" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">Ej. 987654321 (9 digits)</div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="submit" class="btn btn-success">Add</button>
                     <a href="{{route('contacts')}}" class="btn btn-secondary">Cancel</a>
                   </form>
             </div>

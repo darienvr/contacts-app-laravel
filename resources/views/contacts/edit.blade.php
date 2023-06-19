@@ -17,7 +17,7 @@
                         <input type="text" name="numero" class="form-control" value="{{$contact->numero}}" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">Ej. 987654321 (9 digits)</div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-success">Save</button>
                     <a href="{{route('contacts')}}" class="btn btn-secondary">Cancel</a>
                   </form>
             </div>
