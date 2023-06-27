@@ -62,7 +62,7 @@ public function register(Request $request)
             return redirect()->route('contacts');
         } else {
             // Autenticación fallida
-            return redirect()->route('auth.login')->with('error', 'Credenciales inválidas. Inténtalo de nuevo.');
+            return redirect()->route('login')->withErrors(['error' => 'Credenciales inválidas. Inténtalo de nuevo.']);
         }
     }
 

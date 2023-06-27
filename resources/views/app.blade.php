@@ -8,17 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
       body {
-        --s: 200px; /* control the size */
-        --c1: #1d1d1d;
-        --c2: #4e4f51;
-        --c3: #3c3c3c;
-        
-        background:
-          repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 180deg) 
-          calc(.5*var(--s)) calc(.5*var(--s)*0.577),
-          repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 180deg);
-        background-size: var(--s) calc(var(--s)*0.577);
-        /* 0.577 = tan(30deg)*/
+        background: #11998e;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       }
     </style>
   </head>

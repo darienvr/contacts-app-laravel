@@ -6,6 +6,15 @@
         <div class="card" style="width: 350px;">
             <div class="card-body">
                 <h4 class="card-title text-center fw-bold py-2">Bienvenido</h4>
+                @if ($errors->any())
+                    <div class="alert alert-danger pb-0">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="{{ route('login-post')}}" method="POST">
                     @csrf
                     <div class="mb-3">

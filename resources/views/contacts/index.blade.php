@@ -14,7 +14,7 @@
 
     <h3 class="text-center text-light mt-3">{{ count($contacts)}} contactos agregados</h3>
     <div class="d-flex justify-content-center mt-1">
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center" style="width: 1200px;">
         @foreach ($contacts as $counter => $contact)
             @if ($counter % 3 == 0)
                 <div class="row">

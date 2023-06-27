@@ -3,31 +3,31 @@
 @section('content')
 
     <div class="d-flex justify-content-center mt-5">
-        @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
         <div class="card" style="width: 350px;">
             <div class="card-body">
                 <h4 class="card-title text-center fw-bold py-2">Ingrese sus datos</h4>
+                @if ($errors->any())
+                    <div class="alert alert-danger pb-0">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="{{ route('register-post')}}" method="POST">
                     @csrf
                     <div class="mb-3">
                     <label class="form-label">Nombre</label>
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="name" class="form-control" value="{{ old('name') }}">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Correo</label>
-                        <input type="email" name="email" class="form-control">
+                        <input type="email" name="email" class="form-control" value="{{ old('email') }}">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Contraseña</label>
-                        <input type="password" name="password" class="form-control">
+                        <input type="password" name="password" class="form-control" value="{{ old('name') }}">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Confirmar contraseña</label>
